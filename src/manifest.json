@@ -3,36 +3,36 @@
     "scripts": ["./background.js"]
   },
   "browser_action": {
-    "default_popup": "./popup.html",
     "default_title": "THBWiki",
-    "default_icon": "assets/icons/logo_128.png"
+    "default_icon": "assets/icons/logo_128.png",
+    "default_popup": "./popup.html"
   },
   "content_scripts": [
     {
       "all_frames": false,
       "js": ["./contentScripts.js"],
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": ["*://thwiki.cc/**/*"],
       "run_at": "document_end"
     }
   ],
-  "description": "vue-chrome-extension-boilerplate",
+  "description": "THB-Enhance",
   "icons": {
     "128": "assets/icons/logo_128.png"
   },
   "manifest_version": 2,
-  "name": "vue-chrome-extension-boilerplate",
+  "name": "THB-Enhance",
   "options_ui": {
     "chrome_style": false,
     "page": "./options.html"
   },
   "permissions": [
-    "http://*/*",
-    "https://*/*",
+    "*://thwiki.cc/**/*",
     "background",
     "storage",
     "tabs",
-    "webRequest"
+    "webRequest",
+    "contextMenus"
   ],
-  "version": "1.0.0",
+  "version": "0.1",
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
