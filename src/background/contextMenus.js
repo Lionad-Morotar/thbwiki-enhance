@@ -1,3 +1,5 @@
+import neteaseConfig from '../netease-service/config'
+
 // 在 THBWIKI 搜索选中内容
 function searchOnTHBWIKI() {
   chrome.contextMenus.create({
@@ -43,21 +45,9 @@ function searchOn163() {
 
 // 在网易云音乐搜索选中内容（按单曲、专辑等项目拆分子项）
 function searchOn163WithType() {
-  const searchTypes = [
-    [1, '单曲'],
-    [10, '专辑'],
-    [100, '歌手'],
-    [1000, '歌单'],
-    [1002, '用户'],
-    [1004, 'MV'],
-    [1006, '歌词'],
-    [1009, '电台'],
-    [1014, '视频'],
-    [1018, '综合'],
-  ]
   const parentID = searchOn163._id
 
-  searchTypes.map(([id, title]) => {
+  neteaseConfig.searchTypes.map(([id, title]) => {
     chrome.contextMenus.create({
       contexts: ['selection'],
       parentId: parentID,

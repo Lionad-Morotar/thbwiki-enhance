@@ -11,7 +11,7 @@
     {
       "all_frames": false,
       "js": ["./contentScripts.js"],
-      "matches": ["*://thwiki.cc/**/*"],
+      "matches": ["*://thwiki.cc/*/*"],
       "run_at": "document_end"
     }
   ],
@@ -26,12 +26,15 @@
     "page": "./options.html"
   },
   "permissions": [
-    "*://thwiki.cc/**/*",
+    "http://*/*",
+    "https://*/*",
     "background",
     "storage",
     "tabs",
     "webRequest",
-    "contextMenus"
+    "cookies",
+    "contextMenus",
+    "declarativeContent"
   ],
   "version": "0.1",
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"

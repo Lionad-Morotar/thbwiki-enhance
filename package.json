@@ -5,10 +5,15 @@
     "url": "http://www.lionad.art"
   },
   "dependencies": {
+    "browser-request": "^0.3.3",
+    "buffer": "^5.6.0",
     "bulma-fluent": "^0.3.25",
-    "vue": "^2.6.11"
+    "crypto-js": "^4.0.0",
+    "querystring": "^0.2.0",
+    "vue": "^2.6.11",
+    "zlib": "^1.0.5"
   },
-  "description": "vue-chrome-extension-boilerplate",
+  "description": "thb wiki enhance",
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
