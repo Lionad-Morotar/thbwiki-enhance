@@ -1,8 +1,8 @@
 {
   "author": {
-    "email": "mubaidr@gmail.com",
-    "name": "Muhammad Ubaid Raza",
-    "url": "https://mubaidr.github.io/"
+    "email": "tangnad@qq.com",
+    "name": "Lionad",
+    "url": "http://www.lionad.art"
   },
   "dependencies": {
     "bulma-fluent": "^0.3.25",
@@ -43,10 +43,10 @@
     "webpack-extension-reloader": "^1.1.4"
   },
   "license": "MIT",
-  "name": "vue-chrome-extension-boilerplate",
+  "name": "thbwiki-enhance",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mubaidr/vue-chrome-extension-boilerplate.git"
+    "url": "git+https://github.com/mubaidr/thbwiki-enhance.git"
   },
   "scripts": {
     "build": "npm run pack && npm run remove-evals && npm run zip",
