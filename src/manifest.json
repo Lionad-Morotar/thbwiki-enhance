@@ -11,7 +11,7 @@
     {
       "all_frames": false,
       "js": ["./contentScripts.js"],
-      "matches": ["*://thwiki.cc/*/*"],
+      "matches": ["*://thwiki.cc/*"],
       "run_at": "document_end"
     }
   ],
