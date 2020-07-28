@@ -3,7 +3,7 @@ import request from 'browser-request'
 import queryString from 'queryString'
 import zlib from 'zlib'
 
-const createRequest = ({ method = 'POST', url, data, options = {} }) => {
+const createRequest = ({ method = 'POST', url, data = {}, options = {} }) => {
   return new Promise((resolve, reject) => {
     let headers = {}
 

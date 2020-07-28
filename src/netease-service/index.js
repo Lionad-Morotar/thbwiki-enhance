@@ -16,8 +16,18 @@ function search(query) {
   })
 }
 
+// 获取专辑详情
+function getAlbum(query) {
+  query = query instanceof Object ? query : { id: query }
+  return request({
+    url: `https://music.163.com/weapi/v1/album/${query.id}`,
+  })
+}
+
+// TODO require.context
 const apiStore = {
   search,
+  getAlbum,
 }
 
 export default function neteaseAPI(type, query = {}) {
@@ -26,7 +36,7 @@ export default function neteaseAPI(type, query = {}) {
   if (!handle) {
     return Promise.reject('API Not Found')
   } else {
-    const cacheName = JSON.stringify(type) + JSON.stringify(query)
+    const cacheName = `${JSON.stringify(type)}-${JSON.stringify(query)}`
     if (useCache) {
       const cache = localStorage[cacheName]
       let res
