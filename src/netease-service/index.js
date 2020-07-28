@@ -16,6 +16,33 @@ function search(query) {
   })
 }
 
-export default {
+const apiStore = {
   search,
+}
+
+export default function neteaseAPI(type, query = {}) {
+  const useCache = true
+  const handle = apiStore[type]
+  if (!handle) {
+    return Promise.reject('API Not Found')
+  } else {
+    const cacheName = JSON.stringify(type) + JSON.stringify(query)
+    if (useCache) {
+      const cache = localStorage[cacheName]
+      let res
+      try {
+        res = cache && JSON.parse(cache)
+      } finally {
+        if (res) {
+          return Promise.resolve(res)
+        }
+      }
+    }
+    return new Promise(resolve => {
+      handle(query).then(res => {
+        localStorage[cacheName] = JSON.stringify(res)
+        resolve(res)
+      })
+    })
+  }
 }

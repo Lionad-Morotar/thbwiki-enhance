@@ -15,8 +15,19 @@ chrome.runtime.onInstalled.addListener(() => {
     if (msg.api) {
       const apiType = msg.api
       const query = msg.query
-      api[apiType] && api[apiType](query).then(sendResponse)
-      return !!api[apiType]
+      api(apiType, query).then(res => {
+        const { status, body } = res
+        if (status === 200) {
+          sendResponse({
+            ...body,
+          })
+        } else {
+          sendResponse({
+            code: 500,
+          })
+        }
+      })
+      return true
     }
   })
 })
