@@ -74,15 +74,15 @@ function sep() {
 /** 事件初始化 */
 
 // TODO：config.xxx 控制子项禁用
-const enableSearch163SubItem = true
+const enableSearch163SubItem = false
 const searchOn163Items = enableSearch163SubItem
   ? [searchOn163, searchOn163WithType]
   : [searchOn163]
 const selectionMenus = [
+  ...searchOn163Items,
+  sep,
   searchOnTHBWIKI,
   jumpToTHBWIKI,
-  sep,
-  ...searchOn163Items,
 ]
 
 // 注册 ContextMenus
